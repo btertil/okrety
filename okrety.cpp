@@ -379,4 +379,4 @@ zasieg:
 
 */
 
-// zmiana
+// jakaś inna zmiana zmiany do rolbacka
