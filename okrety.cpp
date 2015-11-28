@@ -12,7 +12,7 @@ class ship {
   protected:
       static int iloscInstancji;
       static int shipIdAll;
-      int exp=100;
+      int exp;
 
   public:
 
@@ -46,6 +46,8 @@ class ship {
         manuv=120;
         classId=1;
         className = "Merchant";
+
+	exp = 100;
     }
 
     virtual ~ship()
@@ -58,6 +60,8 @@ class ship {
     void auxAtak(ship*);
     float shipDefence(float, float);
     float airDefence();
+
+    void newExp(int);
 
 
 };
@@ -133,6 +137,13 @@ float ship::airDefence()
 {
     return 0.2;
 }
+
+// to do commita
+void ship::newExp(int newexp) {
+    this -> exp = newexp;
+    return;
+}
+
 
 
 class battleship_1 : public ship {
@@ -379,4 +390,4 @@ zasieg:
 
 */
 
-// jakaś inna zmiana zmiany do rolbacka
+// jakaś inna zmiana zmiany do rolbacka i kolejna
