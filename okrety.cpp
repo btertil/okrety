@@ -12,6 +12,7 @@ class ship {
   protected:
       static int iloscInstancji;
       static int shipIdAll;
+      int exp=100;
 
   public:
 
@@ -20,8 +21,7 @@ class ship {
     int auxArt, auxDel, auxCal, auxRang, aaArt1, aaArt2;
     int torTub, manuv, classId, hp, hp_max;
 
-    int exp=100;
-    char *shipName, *className;
+    const char *shipName, *className;
 
     ship()
     {
@@ -262,6 +262,7 @@ void walka (ship *s1, ship *s2)
     int tury=0;
 
     while(s1 -> hp > 0 && s2 -> hp > 0) {
+    	cout << "Tura: " << tury+1 << endl;
         if (s1 ->mainArt > 0) s1 ->mainAtak(s2);
         if (s1 ->auxArt > 0) s1 ->auxAtak(s2);
         if (s2 ->mainArt > 0) s2 ->mainAtak(s1);
@@ -349,7 +350,6 @@ int main(int argc, char **argv) {
     delete s2;
 
     getchar();
-    getchar();
 
     return 0;
 
@@ -379,3 +379,4 @@ zasieg:
 
 */
 
+// zmiana
