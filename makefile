@@ -1,7 +1,7 @@
 # Makefile for okrety
 
 CC = g++
-CFLAGS = -g -Wall -Wextra
+CFLAGS = -Wall -Wextra
 all: okrety
 
 okrety: okrety.cpp
