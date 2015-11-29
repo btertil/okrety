@@ -390,4 +390,3 @@ zasieg:
 
 */
 
-// jakaś inna zmiana zmiany do rolbacka i kolejna
