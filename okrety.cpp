@@ -308,9 +308,11 @@ s_wybor menu(void)
     s_wybor opcja;
 
     while ( ((opcja.w1 < 1) || (opcja.w1 > elements)) || ((opcja.w2 < 1) || (opcja.w2 > elements)) ) {
+        cout << "\n\n";
         for (int i = 0; i < elements; i++) {
             cout << i+1 << ": " << opcje[i] << "\n";
         }
+	cout << "\n^C aby zakonczyc\n";
 
         cout <<"\nWybierz okret strony 1: ";
         cin >> opcja.w1;
@@ -331,36 +333,40 @@ int main(int argc, char **argv) {
     ship *s1, *s2;
     s_wybor wybrane;
 
-    cout << "Ships v0.01 - by Bondir\n\n";
+    cout << "\n\nShips v0.01 - by Bondir";
 
-    wybrane = menu();
+    do {
 
-    if (wybrane.w1 == 1) s1 = new ship;
-    if (wybrane.w1 == 2) s1 = new l_cruiser;
-    if (wybrane.w1 == 3) s1 = new h_cruiser;
-    if (wybrane.w1 == 4) s1 = new b_cruiser;
-    if (wybrane.w1 == 5) s1 = new battleship_1;
-    if (wybrane.w1 == 6) s1 = new battleship_2;
+	    wybrane = menu();
 
-    if (wybrane.w2 == 1) s2 = new ship;
-    if (wybrane.w2 == 2) s2 = new l_cruiser;
-    if (wybrane.w2 == 3) s2 = new h_cruiser;
-    if (wybrane.w2 == 4) s2 = new b_cruiser;
-    if (wybrane.w2 == 5) s2 = new battleship_1;
-    if (wybrane.w2 == 6) s2 = new battleship_2;
+	    if (wybrane.w1 == 1) s1 = new ship;
+	    if (wybrane.w1 == 2) s1 = new l_cruiser;
+	    if (wybrane.w1 == 3) s1 = new h_cruiser;
+	    if (wybrane.w1 == 4) s1 = new b_cruiser;
+	    if (wybrane.w1 == 5) s1 = new battleship_1;
+	    if (wybrane.w1 == 6) s1 = new battleship_2;
+
+	    if (wybrane.w2 == 1) s2 = new ship;
+	    if (wybrane.w2 == 2) s2 = new l_cruiser;
+	    if (wybrane.w2 == 3) s2 = new h_cruiser;
+	    if (wybrane.w2 == 4) s2 = new b_cruiser;
+	    if (wybrane.w2 == 5) s2 = new battleship_1;
+	    if (wybrane.w2 == 6) s2 = new battleship_2;
 
 
-    srand(time(NULL));
+	    srand(time(NULL));
 
-    cout << "Walka pomiedzy " << s1 -> className << " a " << s2 -> className << endl;
-    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
+	    cout << "\n\nWalka pomiedzy " << s1 -> className << " a " << s2 -> className << endl;
+	    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
 
-    walka(s1, s2);
+	    walka(s1, s2);
 
-    delete s1;
-    delete s2;
+	    delete s1;
+	    delete s2;
 
-    getchar();
+	    getchar();
+
+	    } while (0<1);
 
     return 0;
 
