@@ -366,6 +366,10 @@ int main(int argc, char **argv) {
 
 	    getchar();
 
+	    cout << "\n\n***********************\n\n";
+	    cout << "Jeszcze raz?\n";
+
+
 	    } while (0<1);
 
     return 0;
