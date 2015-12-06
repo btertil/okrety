@@ -4,6 +4,7 @@
 #include <string>
 #include <ctime>
 #include <cstdio>
+#include <typeinfo>
 
 using namespace std;
 
@@ -315,9 +316,18 @@ s_wybor menu(void)
 	cout << "\n^C aby zakonczyc\n";
 
         cout <<"\nWybierz okret strony 1: ";
-        cin >> opcja.w1;
-        cout << "Wybierz okret strony 2: ";
-        cin >> opcja.w2;
+        if(!(cin >> opcja.w1)) {
+		opcja.w1 = 0;
+		cin.clear();
+		cin.ignore();
+	}
+        
+	cout << "Wybierz okret strony 2: ";
+        if(!(cin >> opcja.w2)) {
+		opcja.w2 = 0;
+		cin.clear();
+		cin.ignore();
+	}
 
     }
 
