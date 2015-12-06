@@ -79,7 +79,7 @@ void ship::mainAtak(ship *cel)
 
     sila = pow(this->mainCal,1.85) * this->mainCal/8;
     printf("%s ==== >> %s\n", this->className, cel->className);
-    printf("Salwa %i dzial artyleri glownej calibru %i mm\n", this->mainArt, this->mainCal);
+    printf("Salwa %d dzial artyleri glownej calibru %d mm\n", this->mainArt, this->mainCal);
 
     trafia = this-> czy_trafi(this->mainArt, this->exp);
     efekty = cel -> shipDefence(trafia, sila);
@@ -97,7 +97,7 @@ void ship::auxAtak(ship *cel)
 
     sila = pow(this->auxCal,1.85) * this->auxCal/8;
     printf("%s ---- > %s\n", this->className, cel->className);
-    printf("Salwa %i (50\%) dzial artyleri pomocniczej calibru %i mm\n", this->auxArt/2, this->auxCal);
+    printf("Salwa %d dzial artyleri pomocniczej calibru %d mm\n", (int) round(this->auxArt/2), this->auxCal);
 
     trafia = this-> czy_trafi(this->auxArt, this->exp);
     efekty = cel -> shipDefence(trafia, sila);
@@ -286,7 +286,7 @@ void walka (ship *s1, ship *s2)
 }
 
 
-string opcje[] {
+string opcje[] = {
     "merchant",
     "l_cruiser",
     "h_cruiser",
