@@ -365,18 +365,25 @@ int main(int argc, char **argv) {
 
 	    srand(time(NULL));
 
-	    cout << "\n\nWalka pomiedzy " << s1 -> className << " a " << s2 -> className << endl;
+	    cout << "Walka pomiedzy " << s1 -> className << " a " << s2 -> className << endl;
 	    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
 
-	    walka(s1, s2);
+	    getchar();
+	    fflush(stdin);
+
+	    if (wybrane.w1 != 1 || wybrane.w2 != 1) {
+	        walka(s1, s2);
+	    } else {
+	        cout << "Statki handlowe oddalają się od siebie nie podejmując żadnych działań...";
+	    }
 
 	    delete s1;
 	    delete s2;
 
-	    getchar();
+	    // getchar();
 
-	    cout << "\n\n***********************\n\n";
-	    cout << "Jeszcze raz?\n";
+	    cout << "\n\n**********************************************************\n\n";
+	    cout << "Jeszcze raz?";
 
 
 	    } while (0<1);
