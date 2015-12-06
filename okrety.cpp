@@ -35,7 +35,7 @@ class ship {
         mainCal=0;
         mainDel=0;
         mainRang=0;
-        armore=5;
+        armore=15;
         auxArt=0;
         auxDel=0;
         auxCal=0;
