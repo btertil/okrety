@@ -307,6 +307,10 @@ s_wybor menu(void)
 {
     s_wybor opcja;
 
+    // inicjacja na 0 bo czasem zapamiętywał stare wartości
+    opcja.w1 = 0;
+    opcja.w2 = 0;
+
     while ( ((opcja.w1 < 1) || (opcja.w1 > elements)) || ((opcja.w2 < 1) || (opcja.w2 > elements)) ) {
         cout << "\n\n";
         for (int i = 0; i < elements; i++) {
@@ -345,7 +349,6 @@ int main(int argc, char **argv) {
     cout << "\n\nShips v0.01 - by Bondir";
 
     do {
-
 	    wybrane = menu();
 
 	    if (wybrane.w1 == 1) s1 = new ship;
