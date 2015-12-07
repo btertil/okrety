@@ -349,6 +349,7 @@ int main(int argc, char **argv) {
     cout << "\n\nShips v0.01 - by Bondir";
 
     do {
+    	
 	    wybrane = menu();
 
 	    if (wybrane.w1 == 1) s1 = new ship;
@@ -371,8 +372,8 @@ int main(int argc, char **argv) {
 	    cout << "Walka pomiedzy " << s1 -> className << " a " << s2 -> className << endl;
 	    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n";
 
-	    getchar();
-	    fflush(stdin);
+	    // getchar();
+	    // fflush(stdin);
 
 	    if (wybrane.w1 != 1 || wybrane.w2 != 1) {
 	        walka(s1, s2);
@@ -382,8 +383,6 @@ int main(int argc, char **argv) {
 
 	    delete s1;
 	    delete s2;
-
-	    // getchar();
 
 	    cout << "\n\n**********************************************************\n\n";
 	    cout << "Jeszcze raz?";
