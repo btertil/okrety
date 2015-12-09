@@ -77,15 +77,15 @@ void ship::mainAtak(ship *cel)
 {
     float sila, trafia, efekty;
 
-    sila = pow(this->mainCal,1.85) * this->mainCal/8;
-    printf("%s ==== >> %s\n", this->className, cel->className);
-    printf("Salwa %d dzial artyleri glownej calibru %d mm\n", this->mainArt, this->mainCal);
+    if (this -> hp > 0) {
+        sila = pow(this->mainCal,1.85) * this->mainCal/8;
+        printf("%s ==== >> %s\n", this->className, cel->className);
+        printf("Salwa %d dzial artyleri glownej calibru %d mm\n", this->mainArt, this->mainCal);
 
-    trafia = this-> czy_trafi(this->mainArt, this->exp);
-    efekty = cel -> shipDefence(trafia, sila);
-    cel -> hp -= (int)efekty;
-
-
+        trafia = this-> czy_trafi(this->mainArt, this->exp);
+        efekty = cel -> shipDefence(trafia, sila);
+        cel -> hp -= (int)efekty;
+    }
 
     return;
 }
@@ -95,15 +95,17 @@ void ship::auxAtak(ship *cel)
 {
     float sila, trafia, efekty;
 
-    sila = pow(this->auxCal,1.85) * this->auxCal/8;
-    printf("%s ---- > %s\n", this->className, cel->className);
-    printf("Salwa %d dzial artyleri pomocniczej calibru %d mm\n", (int) round(this->auxArt/2), this->auxCal);
+    if (this -> hp > 0) {
+        sila = pow(this->auxCal,1.85) * this->auxCal/8;
+        printf("%s ---- > %s\n", this->className, cel->className);
+        printf("Salwa %d dzial artyleri pomocniczej calibru %d mm\n", (int) round(this->auxArt/2), this->auxCal);
 
-    trafia = this-> czy_trafi(this->auxArt, this->exp);
-    efekty = cel -> shipDefence(trafia, sila);
-    cel -> hp -= (int)efekty;
-
-    return;
+        trafia = this-> czy_trafi(this->auxArt, this->exp);
+        efekty = cel -> shipDefence(trafia, sila);
+        cel -> hp -= (int)efekty;
+    }
+ 
+   return;
 }
 
 
