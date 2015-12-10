@@ -1,7 +1,8 @@
-Walka między statkami, nic wielkiego, przykład dziedziczenia klas.
-Gra uruchamia się w terminalu i nie ma żadnej grafiki.
+Gra konsolowa polegająca na symulowanej walce między okrętami.
+Nic wielkiego, krótki program w C++ z przykładem dziedziczenia klas.
+Program uruchamia się w terminalu i nie ma żadnej grafiki.
 
-kompilacja pod windowsem: g++ okrety.cpp -o okrety.exe
+Kompilacja pod windowsem: g++ okrety.cpp -o okrety.exe
 
-kompilacja pod linuxem: g++ okrety.cpp -o okrety
+Kompilacja pod linuxem: g++ okrety.cpp -o okrety
 w przypadku linuksa można skorzystać z make
