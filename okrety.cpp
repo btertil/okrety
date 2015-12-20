@@ -116,7 +116,7 @@ float ship::czy_trafi(int ile, int exp_sh)
     float ret = ((float)ile/7 * (float)los/100);
     //debug:
     //    printf("los wynosi %i a ret %f\n",los, ret);
-    printf("Skutek to %f trafienia\n",ret);
+    printf("Skutek to %.2f trafienia\n",ret);
     return ret;
 }
 
