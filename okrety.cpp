@@ -274,14 +274,14 @@ void walka (ship *s1, ship *s2)
 {
     int tury=0;
 
-    while(s1 -> hp > 0 && s2 -> hp > 0) {
+    do {
     	cout << "Tura: " << tury+1 << endl;
         if (s1 ->mainArt > 0) s1 ->mainAtak(s2);
         if (s1 ->auxArt > 0) s1 ->auxAtak(s2);
         if (s2 ->mainArt > 0) s2 ->mainAtak(s1);
         if (s2 ->auxArt > 0) s2 ->auxAtak(s1);
         tury++;
-    }
+    } while (s1 -> hp > 0 && s2 -> hp > 0);
 
     printf("Walka zakonczona po %i turach\n", tury);
     return;
