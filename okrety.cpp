@@ -130,7 +130,7 @@ float ship::shipDefence(float trafienia, float sila)
         zniszczenie = (trafienia * sila) / ((sqrt((float) this -> exp) * (float) (armore)) + 5) ;
     }
 
-    printf("Zniszczenia %s to %i, pozostale hp: %i \(%i pct)\n\n", this -> className, (int)zniszczenie, this -> hp - (int)zniszczenie, (int) round((((float) (hp- (int)zniszczenie)) / ((float) hp_max) * 100)));
+    printf("Zniszczenia %s to %i, pozostale hp: %i (%i pct)\n\n", this -> className, (int)zniszczenie, this -> hp - (int)zniszczenie, (int) round((((float) (hp- (int)zniszczenie)) / ((float) hp_max) * 100)));
 
     return zniszczenie;
 }
