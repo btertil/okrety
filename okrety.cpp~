@@ -130,7 +130,7 @@ float ship::shipDefence(float trafienia, float sila)
         zniszczenie = (trafienia * sila) / ((sqrt((float) this -> exp) * (float) (armore)) + 5) ;
     }
 
-    printf("Zniszczenia %s to %i, pozostale hp: %i (%i pct)\n\n", this -> className, (int)zniszczenie, this -> hp - (int)zniszczenie, (int) round((((float) (hp- (int)zniszczenie)) / ((float) hp_max) * 100)));
+    printf("Zniszczenia %s to %i, pozostale hp: %i \(%i pct)\n\n", this -> className, (int)zniszczenie, this -> hp - (int)zniszczenie, (int) round((((float) (hp- (int)zniszczenie)) / ((float) hp_max) * 100)));
 
     return zniszczenie;
 }
@@ -274,14 +274,14 @@ void walka (ship *s1, ship *s2)
 {
     int tury=0;
 
-    do {
+    while(s1 -> hp > 0 && s2 -> hp > 0) {
     	cout << "Tura: " << tury+1 << endl;
         if (s1 ->mainArt > 0) s1 ->mainAtak(s2);
         if (s1 ->auxArt > 0) s1 ->auxAtak(s2);
         if (s2 ->mainArt > 0) s2 ->mainAtak(s1);
         if (s2 ->auxArt > 0) s2 ->auxAtak(s1);
         tury++;
-    } while (s1 -> hp > 0 && s2 -> hp > 0);
+    }
 
     printf("Walka zakonczona po %i turach\n", tury);
     return;
@@ -309,32 +309,30 @@ s_wybor menu(void)
 {
     s_wybor opcja;
 
-    // inicjacja na -1 bo czasem zapamiętywał stare wartości
-    opcja.w1 = -1;
-    opcja.w2 = -1;
+    // inicjacja na 0 bo czasem zapamiętywał stare wartości
+    opcja.w1 = 0;
+    opcja.w2 = 0;
 
-    while ( ((opcja.w1 < 0) || (opcja.w1 > elements)) || ((opcja.w2 < 0) || (opcja.w2 > elements)) ) {
+    while ( ((opcja.w1 < 1) || (opcja.w1 > elements)) || ((opcja.w2 < 1) || (opcja.w2 > elements)) ) {
         cout << "\n\n";
         for (int i = 0; i < elements; i++) {
             cout << i+1 << ": " << opcje[i] << "\n";
         }
-	cout << "\n0 lub Ctr+C aby zakonczyc...\n";
+	cout << "\nCtr+C aby zakonczyc...\n";
 
         cout <<"\nWybierz okret strony 1: ";
         if(!(cin >> opcja.w1)) {
-		opcja.w1 = -1;
+		opcja.w1 = 0;
 		cin.clear();
 		cin.ignore();
 	}
-	if (opcja.w1 == 0) exit(0);
         
 	cout << "Wybierz okret strony 2: ";
         if(!(cin >> opcja.w2)) {
-		opcja.w2 = -1;
+		opcja.w2 = 0;
 		cin.clear();
 		cin.ignore();
 	}
-	if (opcja.w2 == 0) exit(0);
 
     }
 
