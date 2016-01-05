@@ -288,6 +288,13 @@ void walka (ship *s1, ship *s2)
 }
 
 
+void exitb(void) {
+
+	puts("Bye...\n");
+	exit(0);
+}
+
+
 string opcje[] = {
     "merchant",
     "l_cruiser",
@@ -326,7 +333,7 @@ s_wybor menu(void)
 		cin.clear();
 		cin.ignore();
 	}
-	if (opcja.w1 == 0) exit(0);
+	if (opcja.w1 == 0) exitb();
         
 	cout << "Wybierz okret strony 2: ";
         if(!(cin >> opcja.w2)) {
@@ -334,7 +341,7 @@ s_wybor menu(void)
 		cin.clear();
 		cin.ignore();
 	}
-	if (opcja.w2 == 0) exit(0);
+	if (opcja.w2 == 0) exitb();
 
     }
 
@@ -397,6 +404,7 @@ int main(int argc, char **argv) {
     return 0;
 
 }
+
 
 
 /* zniszczenia w funkcji shipDefence()
