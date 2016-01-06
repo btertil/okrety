@@ -325,7 +325,7 @@ s_wybor menu(void)
         for (int i = 0; i < elements; i++) {
             cout << i+1 << ": " << opcje[i] << "\n";
         }
-	cout << "\n0 aby zakonczyc...\n";
+	cout << "\n0: aby zakonczyc...\n";
 
         cout <<"\nWybierz okret strony 1: ";
         if(!(cin >> opcja.w1)) {
